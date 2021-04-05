@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">    
+    <meta name="author" content="윤선영">
+    <title>Welcome to Planer</title>
+    <link rel="stylesheet" href="./finalStyle.css">
+    
+    <script src="https://kit.fontawesome.com/77bca88438.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet">
+    <script defer src="./final.js"></script> 
+</head>
+
+<body>
+    <div class="header">
+        <nav class="header__container">
+            <ul class="menu__left">
+                <li>
+                    <div class="logo"
+                        src="https://a.trellocdn.com/prgb/dist/images/header-logo-2x.01ef898811a879595cea.png"
+                        alt="Trello">
+                        <i class="fas fa-cheese"></i>
+                        <a href="">Welcome to Planer</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#"><i class="far fa-star"></i></a></li>
+                <li class="menu__item"><a href="#">Personal</a></li>
+                <li class="menu__item"><a href="#">Private</a></li>
+            </ul>
+            <ul class="menu__right">
+                <li class="menu__item"><a href="#">Search</a></li>
+                <li class="menu__item"><a href="#">Sign in</a></li>
+                <li class="menu__item"><a href="#">Sign up</a></li>
+                <li class="menu__item"><a href="#">information</a></li>
+                <li class="menu__item"><a href="#">Show Menu</a></li>
+            </ul>
+        </nav>
+    </div>
+    <main class="board__container">        
+        <div class="box box1">
+            <div class="items__title" id="todoList_title">Things To do</div>
+            <div class="items__titleIcon">                            
+                <span class="title_updateBtn"><i class="fas fa-edit"></i></span>
+                <span class="title_deleteBtn" onclick="onDeleteList(this)"><i class="fas fa-trash-alt"></i></span>
+            </div>
+            <div class="items__content">
+                <ul id="todoList_cardlist">              
+                </ul>
+            </div>
+            <div class="addCard">                
+                <span class="items__add"><i class="fas fa-plus-circle"></i> Add another card</span>
+                <form class="addCardform" id="addCardform1" style="display: none;">
+                    <input type="text" id="todoInput" placeholder="Enter a title for this card..">
+                    <button class="addBtn" id="todoList_addBtn" type="button">ADD</button>
+                </form>
+            </div>
+        </div>
+        <div class="box box2">
+            <div class="items__title" id="doingList_title">Doing</div>
+            <div class="items__titleIcon">                            
+                <span class="title_updateBtn"><i class="fas fa-edit"></i></span>
+                <span class="title_deleteBtn"><i class="fas fa-trash-alt"></i></span>
+            </div>
+            <div class="items__content">
+                <ul id="doing_cardlist">              
+                </ul>
+            </div>            
+            <div class="addCard">                
+                <span class="items__add"><i class="fas fa-plus-circle"></i> Add another card</span>
+                <form class="addCardform" id="addCardform2" style="display: none;">
+                    <input type="text" id="doingInput" placeholder="Enter a title for this card..">
+                    <button class="addBtn" id="doing_addBtn" type="button">ADD</button>
+                </form>
+            </div>
+        </div> 
+        <div class="box box3">
+            <div class="items__title" id="doneList_title">Done</div>
+            <div class="items__titleIcon">                            
+                <span class="title_updateBtn"><i class="fas fa-edit"></i></span>
+                <span class="title_deleteBtn"><i class="fas fa-trash-alt" onclick='remove(this)'></i></span>
+            </div>
+            <div class="items__content">
+                <ul id="done_cardlist">
+                </ul>
+            </div>
+            <div class="addCard">                
+                <span class="items__add"><i class="fas fa-plus-circle"></i> Add another card</span>
+                <form class="addCardform" id="addCardform3" style="display: none;">
+                    <input type="text" id="doneInput" placeholder="Enter a title for this card..">
+                    <button class="addBtn" id="done_addBtn" type="button">ADD</button>
+                </form>
+            </div>
+        </div>
+        <div class="box" id="list__addBtn">
+            <i class="fas fa-plus-circle"></i>
+            <a> Add another list</div>
+    </div>                
+    </main>
+    
+    <div class="modal__wrapper">
+            <div class="modal">
+                <div class="modal__title">Edit List title</div>
+                <form class="modal_text">
+                <input type="text" id="modaltxt"></input>
+                <div class="modal__btn">
+                <button type="button" id="updateModal">수정</button>
+                <button type="button" id="closeModal">닫기</button>
+                </form>           
+            </div>            
+    </div>
+</body>
+</html>
